@@ -4,6 +4,7 @@ Utilized Hybrid A* search for sophisticated path planning, enabling the car to n
 Implemented a Proportional-Derivative (PD) controller, dynamically adjusting steering, speed, and braking for efficient real-time navigation.
 Enhanced the system by integrating obstacle avoidance capabilities into the path planning and control algorithms, further refining the car's autonomous operation.
 
+https://www.youtube.com/watch?v=n1QGdyXPFZI
 
 
 
