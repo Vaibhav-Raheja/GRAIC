@@ -1,0 +1,4 @@
+Time: 24.5, Collision Actor ID: 0, Collision Actor Type: static.terrain
+Time: 28.95, Collision Actor ID: 0, Collision Actor Type: static.terrain
+Time: 28.83, Collision Actor ID: 0, Collision Actor Type: static.terrain
+Time: 35.2, Collision Actor ID: 0, Collision Actor Type: static.terrain
