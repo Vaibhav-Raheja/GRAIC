@@ -63,8 +63,7 @@ except IndexError:
 import carla
 from carla import ColorConverter as cc
 
-# from agent import Agent
-# from agent_DP import Agent
+# Import the agent controller
 from agent_DP import Agent
 
 # ==============================================================================

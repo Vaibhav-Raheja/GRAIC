@@ -1,3 +1,9 @@
+"""
+GRAIC 2023 Autonomous Racing Agent - Dynamic Programming Implementation
+
+This module implements an agent controller using Dynamic Programming for path planning
+combined with Pure Pursuit for lateral control and PD control for longitudinal control.
+"""
 import carla
 import math
 import numpy as np
@@ -7,6 +13,7 @@ from scipy.interpolate import UnivariateSpline
 import csv
 
 def save_waypoints_to_csv(waypoints, filename='path_dp.txt'):
+    """Save waypoints to CSV file for debugging."""
     with open(filename, mode='a', newline='') as file:
         writer = csv.writer(file)
         # Write heade
@@ -15,19 +22,36 @@ def save_waypoints_to_csv(waypoints, filename='path_dp.txt'):
             writer.writerow([waypoint[0], waypoint[1]])
 
 def save_curr_to_csv(loc, filename='curr_dp.txt'):
-    with open(filename, mode='a', newline='') as file:  # 'a' mode to append to the file
+    """Save current position to CSV file for debugging."""
+    with open(filename, mode='a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([loc[0], loc[1]])
 
 
-
-
 def get_speed(velocity):
-    velocity = math.sqrt(velocity.x**2 + velocity.y**2 + velocity.z**2)
-    # print(velocity)
-    return velocity
+    """
+    Calculate speed magnitude from CARLA velocity vector.
+
+    Args:
+        velocity: carla.Vector3D velocity vector
+
+    Returns:
+        float: Speed magnitude in m/s
+    """
+    return math.sqrt(velocity.x**2 + velocity.y**2 + velocity.z**2)
+
 
 class Agent():
+    """
+    Autonomous racing agent using Dynamic Programming for optimal path planning.
+
+    This agent divides the track into a grid, uses DP to find the optimal path considering
+    track boundaries and obstacles, then applies Pure Pursuit and PD control for navigation.
+
+    Attributes:
+        vehicle: CARLA vehicle actor (optional)
+        L: Wheelbase of the vehicle in meters (default: 2.875)
+    """
     def __init__(self, vehicle=None, L=2.875):
         self.vehicle = vehicle
         self.L = L  # Wheelbase of the vehicle

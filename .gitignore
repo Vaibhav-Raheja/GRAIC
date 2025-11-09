@@ -1,2 +1,62 @@
+# Configuration files
 *.ini
+
+# Data files
 Race/path.txt
+*.txt
+!requirements.txt
+!README.txt
+*.csv
+
+# Images and videos (except documentation)
+*.png
+*.jpg
+*.jpeg
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Output directories
+output/
+data/
+logs/
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Type checking
+.mypy_cache/
+.pytype/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS files
+Thumbs.db

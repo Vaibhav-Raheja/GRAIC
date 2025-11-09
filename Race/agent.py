@@ -1,14 +1,15 @@
+"""
+GRAIC 2023 Autonomous Racing Agent
+This is a stub implementation for the competition submission.
+"""
 import carla
-import time
 import numpy as np
-import numpy as np
-from matplotlib import pyplot as plt
-from collections import deque
-import math
-import numpy as np
-from scipy.interpolate import CubicSpline
-from agents.tools.misc import get_speed
+
 class Agent():
+    """
+    Basic agent controller for autonomous racing in CARLA simulator.
+    This is a minimal stub implementation.
+    """
 
     
 
