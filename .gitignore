@@ -1,2 +1,8 @@
-*.ini
 Race/path.txt
+
+# LaTeX aux files (keep paper.tex and paper.pdf)
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
